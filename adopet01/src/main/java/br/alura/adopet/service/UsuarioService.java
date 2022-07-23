@@ -1,7 +1,9 @@
 package br.alura.adopet.service;
 
 import br.alura.adopet.exception.NotFoundException;
+
 import br.alura.adopet.exception.UsuarioExistenteException;
+
 import br.alura.adopet.model.DtoMensagem;
 import br.alura.adopet.model.UsuarioAdopet;
 import br.alura.adopet.repository.IUsuarioRepo;
@@ -17,9 +19,11 @@ public class UsuarioService implements IUsuarioService{
 
     @Override
     public UsuarioAdopet cadastrarUsuario(UsuarioAdopet usuario) {
+
         if(usuario.getId() > 0){
             throw new UsuarioExistenteException("Usuário já cadastrado");
         }
+
         return repo.save(usuario);
     }
 
@@ -35,6 +39,7 @@ public class UsuarioService implements IUsuarioService{
         return DtoMensagem.builder()
                 .mensagem("Usuário deletado com sucesso!")
                 .build();
+
 
     }
 

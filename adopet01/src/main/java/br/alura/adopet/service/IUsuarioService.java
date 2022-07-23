@@ -7,4 +7,5 @@ public interface IUsuarioService {
     UsuarioAdopet cadastrarUsuario(UsuarioAdopet usuario);
     UsuarioAdopet buscarUsuario(long id);
     DtoMensagem deletarUsuario(long id);
+
 }
